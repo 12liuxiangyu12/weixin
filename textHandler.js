@@ -14,7 +14,7 @@ function handler(msg,res){
 	var content = msg['Content'] || "";
 	for(var i in keys){
 		if(contain(content,keys[i])){
-			responseText = keywords[keys[i]](function(data){
+				keywords[keys[i]](function(data){
 				console.log("收到msg发消息")
 				var msg = xo.object.getTextMsg(msg['ToUserName'],msg['FromUserName'],data);
 				res.end(msg.toString());
