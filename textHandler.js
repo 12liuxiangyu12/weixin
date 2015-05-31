@@ -2,6 +2,7 @@ var xo = require("./xmlObject.js");
 var http=require('http');  
 var keywords = {};
 var wxid = "gh_3516ef030215"
+var mymsg={};
 keywords["笑话"] = getJoke;
 keywords["段子"] = getJoke;
 
@@ -10,13 +11,14 @@ for(var key in keywords){
 	keys.push(key);
 }
 function handler(msg,res){
+	mymsg = msg;
 	var responseText = "已将您的消息发给主人啦，有空就回复哦！"
 	var content = msg['Content'] || "";
 	for(var i in keys){
 		if(contain(content,keys[i])){
 				keywords[keys[i]](function(data){
-				console.log("收到msg发消息")
-				var msg = xo.object.getTextMsg(msg['ToUserName'],msg['FromUserName'],data);
+				console.log("收到msg发消息",mymsg);
+				var msg = xo.object.getTextMsg(mymsg['ToUserName'],mymsg['FromUserName'],data);
 				res.end(msg.toString());
 			});
 			return
