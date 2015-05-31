@@ -35,7 +35,7 @@ function getJoke(func){
 	http.get("http://brisk.eu.org/api/joke.php", function(res) {  
     res.on('data', function(data) {  
     console.log("Got data: " + data);  
-    data = data.toString().replace(new RegExp("\r\n"),"");
+    data = data.toString().replace(new RegExp("\r\n","gm"),"");
     func(data);
   });  
 }).on('error', function(e) {  
