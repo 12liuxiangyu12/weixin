@@ -1,8 +1,11 @@
 var server = require('http');
 var url = require('url');
 var qs = require('querystring');
+
 var xp = require("./xmlParser.js");
 var xo = require("./xmlObject.js");
+var menu = require("./createMenu.js");
+menu.createMenu();
 var msgRouter = require("./msgRouter.js");
 server.createServer(function(req,res){
 	var queryUrl = req.url;

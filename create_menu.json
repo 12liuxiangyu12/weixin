@@ -1,0 +1,20 @@
+{  
+  "button": [  
+    {  
+      "name": "休息一下",  
+      "sub_button": [  
+        {  
+          "type": "click",  
+          "name": "来个段子",  
+          "key": "V1000-JOKE"  
+        }
+      ]  
+    },  
+    {  
+      "type": "click",  
+      "name": "查看全部功能",  
+      "key": "V1001-VIEW-FUNCTION"  
+    }
+      
+  ]  
+}  

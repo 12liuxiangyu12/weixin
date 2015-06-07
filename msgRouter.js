@@ -2,8 +2,12 @@ var textHandler = require("./textHandler.js");
 
 function router(msg,res){
 	console.log(msg);
-	if(msg['MsgType'] == "text"){
+	var msgType = message.MsgType
+	if(msgType == "text"){
 		textHandler.handler(msg,res);
+	}
+	if(msgType == "event"){
+		eventHandler.handler(msg,res);
 	}
 }
 
